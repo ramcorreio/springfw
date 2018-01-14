@@ -14,16 +14,16 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- dependências -->
-		<version.junit>4.12</version.junit>
-		<version.org.springframework>5.0.2.RELEASE</version.org.springframework>
-		<version.spring-data-jpa>2.0.2.RELEASE</version.spring-data-jpa>
-		<version.hibernate-jpa-2.1-api>1.0.0.Final</version.hibernate-jpa-2.1-api>
-		<version.hibernate-entitymanager>5.2.12.Final</version.hibernate-entitymanager>
-		<version.h2>1.4.196</version.h2>
-		<version.hamcrest>1.3</version.hamcrest>
-		<version.springf>0.0.1-SNAPSHOT</version.springf>
+		<!-- <version.junit>4.12</version.junit> <version.org.springframework>5.0.2.RELEASE</version.org.springframework> 
+			<version.spring-data-jpa>2.0.2.RELEASE</version.spring-data-jpa> <version.hibernate-jpa-2.1-api>1.0.0.Final</version.hibernate-jpa-2.1-api> 
+			<version.hibernate-entitymanager>5.2.12.Final</version.hibernate-entitymanager> 
+			<version.h2>1.4.196</version.h2> <version.hamcrest>1.3</version.hamcrest> 
+			<version.springf>0.0.1-SNAPSHOT</version.springf> -->
+
 		<version.primefaces>6.1</version.primefaces>
-		<version.jsf-impl>2.2.14</version.jsf-impl>
+		<version.jsf>2.2.10</version.jsf>
+		<version.servlet-api>3.1.0</version.servlet-api>
+		<version.springf>0.0.1-SNAPSHOT</version.springf>
 
 		<!-- dependências plugins -->
 		<version.maven-compiler-plugin>3.7.0</version.maven-compiler-plugin>
@@ -32,30 +32,53 @@
 		<version.java.target>${version.java.source}</version.java.target>
 
 		<version.slf4j>1.7.1</version.slf4j>
-		<version.logback>1.0.6</version.logback>
-
+		<!-- <version.logback>1.0.6</version.logback> -->
 
 	</properties>
 
 	<dependencies>
+
 		<dependency>
-			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-all-7.0</artifactId>
-			<version>1.0.1.Final</version>
+			<groupId>club.colab4p</groupId>
+			<artifactId>springf</artifactId>
+			<version>${version.springf}</version>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${version.servlet-api}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>${version.jsf}</version>
+		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
-			<version>${version.jsf-impl}</version>
+			<version>${version.jsf}</version>
+			<scope>runtime</scope>
 		</dependency>
-		
-		
+
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>6.1</version>
+			<version>${version.primefaces}</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${version.slf4j}</version>
 		</dependency>
 
 	</dependencies>
